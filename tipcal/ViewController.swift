@@ -41,6 +41,11 @@ class ViewController: UIViewController {
         totalLabel.text = String(format: "$%.2f", total)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        billField.becomeFirstResponder()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let tipDefaults = UserDefaults.standard;
@@ -49,6 +54,14 @@ class ViewController: UIViewController {
             tipIndex = 0
         }
         tipControl.selectedSegmentIndex = tipIndex
+        let tipPercentages = [0.18, 0.2, 0.25]
+        
+        let bill = Double(billField.text!) ?? 0
+        let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
+        let total = bill + tip
+        
+        tipLabel.text = String(format: "$%.2f", tip)
+        totalLabel.text = String(format: "$%.2f", total)
     }
 }
 
