@@ -14,6 +14,7 @@
 		6E9BAF651D9388AD0057C3EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E9BAF631D9388AD0057C3EC /* LaunchScreen.storyboard */; };
 		6E9BAF701D9388AD0057C3EC /* tipcalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BAF6F1D9388AD0057C3EC /* tipcalTests.swift */; };
 		6E9BAF7B1D9388AD0057C3EC /* tipcalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BAF7A1D9388AD0057C3EC /* tipcalUITests.swift */; };
+		6EE62FF91D9870550044D534 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE62FF81D9870550044D534 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		6E9BAF761D9388AD0057C3EC /* tipcalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tipcalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E9BAF7A1D9388AD0057C3EC /* tipcalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipcalUITests.swift; sourceTree = "<group>"; };
 		6E9BAF7C1D9388AD0057C3EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EE62FF81D9870550044D534 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				6E9BAF5A1D9388AD0057C3EC /* AppDelegate.swift */,
 				6E9BAF5C1D9388AD0057C3EC /* ViewController.swift */,
 				6E9BAF5E1D9388AD0057C3EC /* Main.storyboard */,
+				6EE62FF81D9870550044D534 /* SettingsViewController.swift */,
 				6E9BAF611D9388AD0057C3EC /* Assets.xcassets */,
 				6E9BAF631D9388AD0057C3EC /* LaunchScreen.storyboard */,
 				6E9BAF661D9388AD0057C3EC /* Info.plist */,
@@ -193,6 +196,7 @@
 				TargetAttributes = {
 					6E9BAF561D9388AC0057C3EC = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = C73HR33LX2;
 						ProvisioningStyle = Automatic;
 					};
 					6E9BAF6A1D9388AD0057C3EC = {
@@ -261,6 +265,7 @@
 			files = (
 				6E9BAF5D1D9388AD0057C3EC /* ViewController.swift in Sources */,
 				6E9BAF5B1D9388AD0057C3EC /* AppDelegate.swift in Sources */,
+				6EE62FF91D9870550044D534 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +415,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = C73HR33LX2;
 				INFOPLIST_FILE = tipcal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dioclese.tipcal;
@@ -422,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = C73HR33LX2;
 				INFOPLIST_FILE = tipcal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dioclese.tipcal;
@@ -503,6 +510,7 @@
 				6E9BAF811D9388AD0057C3EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E9BAF821D9388AD0057C3EC /* Build configuration list for PBXNativeTarget "tipcalTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +519,7 @@
 				6E9BAF841D9388AD0057C3EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E9BAF851D9388AD0057C3EC /* Build configuration list for PBXNativeTarget "tipcalUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +528,7 @@
 				6E9BAF871D9388AD0057C3EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
