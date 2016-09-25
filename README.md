@@ -1,17 +1,17 @@
-# Pre-work - *Name of App Here*
+# Pre-work - Tip Calculator
 
 **Name of your app** is a tip calculator application for iOS.
 
-Submitted by: **Your Name Here**
+Submitted by: Jiachen Zhao
 
-Time spent: **X** hours spent in total
+Time spent: 4 hours spent in total
 
 ## User Stories
 
 The following **required** functionality is complete:
 
-* [ ] User can enter a bill amount, choose a tip percentage, and see the tip and total values.
-* [ ] Settings page to change the default tip percentage.
+* [x] User can enter a bill amount, choose a tip percentage, and see the tip and total values.
+* [x] Settings page to change the default tip percentage.
 
 The following **optional** features are implemented:
 * [ ] UI animations
@@ -27,13 +27,13 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](http://i.imgur.com/link/to/your/gif/file.gif)
+![Video Walkthrough](http://imgur.com/a/xCF7p)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+The listener and UI component mapping is not clear from the code. I encoutnered a null pointer with my tip selector and discovered after some investigation that I have deleted the outlet in the storyboard.
 
 ## License
 
