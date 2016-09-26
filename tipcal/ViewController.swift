@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var resultView: UIView!
     
     
     override func viewDidLoad() {
@@ -25,20 +26,16 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func onTap(_ sender: AnyObject) {
-        view.endEditing(true)
-    }
 
     @IBAction func calculateTip(_ sender: AnyObject) {
         
-        let tipPercentages = [0.18, 0.2, 0.25]
+        showTipAndTotalInLocalCurrency()
         
-        let bill = Double(billField.text!) ?? 0
-        let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
-        let total = bill + tip
-        
-        tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "$%.2f", total)
+        if (resultView.alpha == 0) {
+            UIView.animate(withDuration: 2, animations: {
+                self.resultView.alpha = 1
+            })
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -54,14 +51,26 @@ class ViewController: UIViewController {
             tipIndex = 0
         }
         tipControl.selectedSegmentIndex = tipIndex
-        let tipPercentages = [0.18, 0.2, 0.25]
         
+        showTipAndTotalInLocalCurrency()
+
+        if (billField.text == "") {
+            resultView.alpha = 0
+        }
+        showTipAndTotalInLocalCurrency()
+    }
+    
+    func showTipAndTotalInLocalCurrency() {
+        let tipPercentages = [0.18, 0.2, 0.25]
         let bill = Double(billField.text!) ?? 0
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
         let total = bill + tip
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.maximumFractionDigits = 2;
         
-        tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "$%.2f", total)
+        tipLabel.text = currencyFormatter.string(for: tip)
+        totalLabel.text = currencyFormatter.string(for: total)
     }
 }
 
