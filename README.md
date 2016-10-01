@@ -27,7 +27,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories: (for demo purpose, the timeout used here is only 10 seconds)
 
-![Video Walkthrough](http://i.imgur.com/gkWqP5d.gif)
+![Video Walkthrough](http://i.imgur.com/GgYRkJm.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
