@@ -25,7 +25,7 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough 
 
-Here's a walkthrough of implemented user stories: (for demo purpose, the timeout used here is only 10 seconds)
+Here's a walkthrough of implemented user stories: (for demo purpose, the timeout used here is only 5 seconds)
 
 ![Video Walkthrough](http://i.imgur.com/GgYRkJm.gif)
 
