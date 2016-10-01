@@ -46,6 +46,13 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let tipDefaults = UserDefaults.standard;
+        let bill = tipDefaults.double(forKey: "lastBillAmount")
+        let currencyFormatter = NumberFormatter()
+
+        billField.text = currencyFormatter.string(for: bill)
+        if (billField.text == "0") {
+            billField.text = ""
+        }
         var tipIndex = tipDefaults.integer(forKey: "DefaultTip")
         if ( tipIndex < 0 || tipIndex > 2) {
             tipIndex = 0
@@ -58,6 +65,14 @@ class ViewController: UIViewController {
             resultView.alpha = 0
         }
         showTipAndTotalInLocalCurrency()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        let userDefaults = UserDefaults.standard
+        let bill = Double(billField.text!) ?? 0
+        userDefaults.set(bill, forKey:"lastBillAmount")
+        userDefaults.synchronize()
+        super.viewWillDisappear(animated)
     }
     
     func showTipAndTotalInLocalCurrency() {
