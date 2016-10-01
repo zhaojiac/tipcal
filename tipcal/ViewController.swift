@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        NotificationCenter.default.addObserver(self, selector:#selector(self.onForeGround), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(self.onHideView), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,11 +46,21 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        onForeGround()
         super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        onHideView()
+        super.viewWillDisappear(animated)
+    }
+    
+    @objc private func onForeGround() {
         let tipDefaults = UserDefaults.standard;
         let bill = tipDefaults.double(forKey: "lastBillAmount")
         let currencyFormatter = NumberFormatter()
-
+        print("zhaojiac onforeground with %f", bill)
+        
         billField.text = currencyFormatter.string(for: bill)
         if (billField.text == "0") {
             billField.text = ""
@@ -60,19 +72,18 @@ class ViewController: UIViewController {
         tipControl.selectedSegmentIndex = tipIndex
         
         showTipAndTotalInLocalCurrency()
-
+        
         if (billField.text == "") {
             resultView.alpha = 0
         }
         showTipAndTotalInLocalCurrency()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    @objc private func onHideView() {
         let userDefaults = UserDefaults.standard
         let bill = Double(billField.text!) ?? 0
         userDefaults.set(bill, forKey:"lastBillAmount")
         userDefaults.synchronize()
-        super.viewWillDisappear(animated)
     }
     
     func showTipAndTotalInLocalCurrency() {

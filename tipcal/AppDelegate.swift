@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         tipDefault.set(NSDate(), forKey: "lastActiveTime")
         tipDefault.synchronize()
+        print("zhaojiac enter background\n")
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -47,6 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tipDefault.set(0, forKey: "lastBillAmount")
             tipDefault.synchronize()
         }
+        print("zhaojiac enter foreground\n")
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
